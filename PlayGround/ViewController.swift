@@ -14,16 +14,6 @@ class ViewController: UIViewController {
         return view
     }()
     
-    private lazy var headerContainer : UIView = {
-        let view  = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemBlue
-        view.layer.cornerRadius = 4
-        view.layer.shadowRadius = 4
-        view.layer.shadowOffset = CGSize(width: 1, height: 2)
-        return view
-    }()
-    
     private lazy var basicTitle : UILabel = {
         let basic = UILabel()
         basic.translatesAutoresizingMaskIntoConstraints = false
@@ -32,17 +22,43 @@ class ViewController: UIViewController {
         return basic
     }()
     
+    private lazy var tableViewTitle : UILabel = {
+        let basic = UILabel()
+        basic.translatesAutoresizingMaskIntoConstraints = false
+        basic.text = "Table View"
+        basic.textAlignment = .center
+        return basic
+    }()
+    
+    private lazy var collectionViewTitle : UILabel = {
+        let basic = UILabel()
+        basic.translatesAutoresizingMaskIntoConstraints = false
+        basic.text = "Collection View"
+        basic.textAlignment = .center
+        return basic
+    }()
+    
+    private lazy var headerContainer : UIView = {
+        let view  = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .lightGray
+        view.applyCustomStyle()
+        return view
+    }()
+    
     private lazy var headerContainer2 : UIView = {
-           let view  = UIView()
-           view.translatesAutoresizingMaskIntoConstraints = false
-           view.backgroundColor = .yellow
-           return view
+        let view  = UIView()
+        view.applyCustomStyle()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .lightGray
+        return view
        }()
     
     private lazy var headerContainer3 : UIView = {
         let view  = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
+        view.backgroundColor = .lightGray
+        view.applyCustomStyle()
         return view
     }()
 
@@ -59,7 +75,9 @@ class ViewController: UIViewController {
         containerView.addSubview(headerContainer)
         headerContainer.addSubview(basicTitle)
         containerView.addSubview(headerContainer2)
+        headerContainer2.addSubview(tableViewTitle)
         containerView.addSubview(headerContainer3)
+        headerContainer3.addSubview(collectionViewTitle)
 
         setUpscrollContainerConstraints()
         setUpContainerViewContraints()
@@ -127,7 +145,12 @@ class ViewController: UIViewController {
             headerContainer2.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             headerContainer2.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             headerContainer2.topAnchor.constraint(equalTo: headerContainer.bottomAnchor, constant: 16),
-            headerContainer2.heightAnchor.constraint(equalToConstant: 500)
+            headerContainer2.heightAnchor.constraint(equalToConstant: 70),
+            
+            tableViewTitle.leadingAnchor.constraint(equalTo: headerContainer2.leadingAnchor),
+            tableViewTitle.trailingAnchor.constraint(equalTo: headerContainer2.trailingAnchor),
+            tableViewTitle.topAnchor.constraint(equalTo: headerContainer2.topAnchor),
+            tableViewTitle.bottomAnchor.constraint(equalTo: headerContainer2.bottomAnchor)
         ])
     }
     
@@ -137,7 +160,12 @@ class ViewController: UIViewController {
                headerContainer3.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
                headerContainer3.topAnchor.constraint(equalTo: headerContainer2.bottomAnchor, constant: 16),
                headerContainer3.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
-               headerContainer3.heightAnchor.constraint(equalToConstant: 500)
+               headerContainer3.heightAnchor.constraint(equalToConstant: 70),
+               
+               collectionViewTitle.leadingAnchor.constraint(equalTo: headerContainer3.leadingAnchor),
+               collectionViewTitle.trailingAnchor.constraint(equalTo: headerContainer3.trailingAnchor),
+               collectionViewTitle.topAnchor.constraint(equalTo: headerContainer3.topAnchor),
+               collectionViewTitle.bottomAnchor.constraint(equalTo: headerContainer3.bottomAnchor)
            ])
        }
 }
