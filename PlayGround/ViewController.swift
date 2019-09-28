@@ -17,8 +17,19 @@ class ViewController: UIViewController {
     private lazy var headerContainer : UIView = {
         let view  = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
+        view.backgroundColor = .systemBlue
+        view.layer.cornerRadius = 4
+        view.layer.shadowRadius = 4
+        view.layer.shadowOffset = CGSize(width: 1, height: 2)
         return view
+    }()
+    
+    private lazy var basicTitle : UILabel = {
+        let basic = UILabel()
+        basic.translatesAutoresizingMaskIntoConstraints = false
+        basic.text = "Basics Elements"
+        basic.textAlignment = .center
+        return basic
     }()
     
     private lazy var headerContainer2 : UIView = {
@@ -38,13 +49,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        setUpNavigationBar()
         
-        navigationItem.title = "Playground"
-                        
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
+        headerContainer.addGestureRecognizer(gesture)
+        
         view.addSubview(scrollContainer)
         scrollContainer.addSubview(containerView)
         containerView.addSubview(headerContainer)
+        headerContainer.addSubview(basicTitle)
         containerView.addSubview(headerContainer2)
         containerView.addSubview(headerContainer3)
 
@@ -55,6 +68,23 @@ class ViewController: UIViewController {
         setUpPageHeaderContainer3Constraints()
     }
     
+    fileprivate func setUpNavigationBar() {
+        view.backgroundColor = .white
+        navigationItem.title = "Playground"
+      }
+    
+    @objc func checkAction(sender : UITapGestureRecognizer) {
+//        let basicsViewController = BasicsViewController()
+//        basicsViewController.title = "Basic Elements"
+//        basicsViewController.view.backgroundColor = .white
+//        navigationController?.pushViewController(basicsViewController, animated: true)
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Basics", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "basicsViewController") as! BasicsViewController
+        newViewController.title = "Basic Elements"
+        navigationController?.pushViewController(newViewController, animated: true)
+    }
+      
     fileprivate func setUpscrollContainerConstraints(){
            NSLayoutConstraint.activate([
                scrollContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -66,13 +96,14 @@ class ViewController: UIViewController {
     
     fileprivate func setUpContainerViewContraints() {
         let heightAnchor = containerView.heightAnchor.constraint(equalTo: scrollContainer.heightAnchor, constant: 0)
-        heightAnchor.priority = UILayoutPriority(550)
-        
-           NSLayoutConstraint.activate([
-               containerView.widthAnchor.constraint(equalTo: scrollContainer.widthAnchor),
-               heightAnchor,
-               containerView.bottomAnchor.constraint(equalTo: scrollContainer.bottomAnchor),
-               containerView.topAnchor.constraint(equalTo: scrollContainer.topAnchor),
+        heightAnchor.priority = UILayoutPriority(250)
+        NSLayoutConstraint.activate([
+            containerView.leadingAnchor.constraint(equalTo: scrollContainer.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: scrollContainer.trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: scrollContainer.bottomAnchor),
+            containerView.topAnchor.constraint(equalTo: scrollContainer.topAnchor),
+            containerView.widthAnchor.constraint(equalTo: scrollContainer.widthAnchor),
+            heightAnchor,
            ])
        }
     
@@ -81,7 +112,13 @@ class ViewController: UIViewController {
             headerContainer.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             headerContainer.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 16),
             headerContainer.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
-            headerContainer.heightAnchor.constraint(equalToConstant: 570)
+            headerContainer.heightAnchor.constraint(equalToConstant: 70),
+            
+            basicTitle.leadingAnchor.constraint(equalTo: headerContainer.leadingAnchor),
+            basicTitle.trailingAnchor.constraint(equalTo: headerContainer.trailingAnchor),
+            basicTitle.topAnchor.constraint(equalTo: headerContainer.topAnchor),
+            basicTitle.bottomAnchor.constraint(equalTo: headerContainer.bottomAnchor)
+            
         ])
     }
     
@@ -90,7 +127,7 @@ class ViewController: UIViewController {
             headerContainer2.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             headerContainer2.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             headerContainer2.topAnchor.constraint(equalTo: headerContainer.bottomAnchor, constant: 16),
-            headerContainer2.heightAnchor.constraint(equalToConstant: 570)
+            headerContainer2.heightAnchor.constraint(equalToConstant: 500)
         ])
     }
     
@@ -100,7 +137,7 @@ class ViewController: UIViewController {
                headerContainer3.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
                headerContainer3.topAnchor.constraint(equalTo: headerContainer2.bottomAnchor, constant: 16),
                headerContainer3.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
-               headerContainer3.heightAnchor.constraint(equalToConstant: 270)
+               headerContainer3.heightAnchor.constraint(equalToConstant: 500)
            ])
        }
 }
