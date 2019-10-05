@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68CA93C22348ACF60056A438 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CA93C12348ACF60056A438 /* CustomViewController.swift */; };
 		68D40CF2233AC7FF006381FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D40CF1233AC7FF006381FD /* AppDelegate.swift */; };
 		68D40CF4233AC7FF006381FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D40CF3233AC7FF006381FD /* SceneDelegate.swift */; };
 		68D40CF6233AC7FF006381FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D40CF5233AC7FF006381FD /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		68CA93C12348ACF60056A438 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		68D40CEE233AC7FF006381FD /* PlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D40CF1233AC7FF006381FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68D40CF3233AC7FF006381FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				68E6B368233F74EB0083114B /* Basics.storyboard */,
 				68E6B36A233F75790083114B /* BasicsViewController.swift */,
+				68CA93C12348ACF60056A438 /* CustomViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				68D40CF6233AC7FF006381FD /* ViewController.swift in Sources */,
 				68D40CF2233AC7FF006381FD /* AppDelegate.swift in Sources */,
 				68E6B36E233FC28E0083114B /* UIViewExtensions.swift in Sources */,
+				68CA93C22348ACF60056A438 /* CustomViewController.swift in Sources */,
 				68E6B36B233F75790083114B /* BasicsViewController.swift in Sources */,
 				68D40CF4233AC7FF006381FD /* SceneDelegate.swift in Sources */,
 			);

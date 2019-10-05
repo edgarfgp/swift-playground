@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     private lazy var tableViewTitle : UILabel = {
         let basic = UILabel()
         basic.translatesAutoresizingMaskIntoConstraints = false
-        basic.text = "Table View"
+        basic.text = "Customs View"
         basic.textAlignment = .center
         return basic
     }()
@@ -67,8 +67,10 @@ class ViewController: UIViewController {
         
         setUpNavigationBar()
         
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
-        headerContainer.addGestureRecognizer(gesture)
+        let basicGesture = UITapGestureRecognizer(target: self, action:  #selector(self.navigateToBasic))
+        let customGesture = UITapGestureRecognizer(target: self, action: #selector(self.navigateToCustom))
+        headerContainer.addGestureRecognizer(basicGesture)
+        headerContainer2.addGestureRecognizer(customGesture)
         
         view.addSubview(scrollContainer)
         scrollContainer.addSubview(containerView)
@@ -91,17 +93,19 @@ class ViewController: UIViewController {
         navigationItem.title = "Playground"
       }
     
-    @objc func checkAction(sender : UITapGestureRecognizer) {
-//        let basicsViewController = BasicsViewController()
-//        basicsViewController.title = "Basic Elements"
-//        basicsViewController.view.backgroundColor = .white
-//        navigationController?.pushViewController(basicsViewController, animated: true)
-        
+    @objc func navigateToBasic(sender : UITapGestureRecognizer) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Basics", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "basicsViewController") as! BasicsViewController
         newViewController.title = "Basic Elements"
         navigationController?.pushViewController(newViewController, animated: true)
     }
+    
+    @objc func navigateToCustom(sender : UITapGestureRecognizer) {
+            let basicsViewController = CustomViewController()
+            basicsViewController.title = "Custom Elements"
+            basicsViewController.view.backgroundColor = .white
+            navigationController?.pushViewController(basicsViewController, animated: true)
+        }
       
     fileprivate func setUpscrollContainerConstraints(){
            NSLayoutConstraint.activate([
