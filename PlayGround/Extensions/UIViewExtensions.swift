@@ -9,4 +9,11 @@ extension UIView {
         self.layer.shadowRadius =  4
         self.layer.masksToBounds = true
     }
+    
+    static func instantiateFromNib() -> Self? {
+        func instanceFromNib<T: UIView>() -> T? {
+            return UINib(nibName: "\(self)", bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
+        }
+        return instanceFromNib()
+    }
 }
