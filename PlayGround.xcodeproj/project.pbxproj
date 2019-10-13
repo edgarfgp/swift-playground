@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		684FE9312353C4E4000AC7C2 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FE9302353C4E4000AC7C2 /* HeaderViewController.swift */; };
 		68CA93C22348ACF60056A438 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CA93C12348ACF60056A438 /* CustomViewController.swift */; };
 		68CA93C52348C94F0056A438 /* ElementAction.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68CA93C42348C94F0056A438 /* ElementAction.xib */; };
 		68CA93C72348CA200056A438 /* ElementAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CA93C62348CA200056A438 /* ElementAction.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		684FE9302353C4E4000AC7C2 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		68CA93C12348ACF60056A438 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		68CA93C42348C94F0056A438 /* ElementAction.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementAction.xib; sourceTree = "<group>"; };
 		68CA93C62348CA200056A438 /* ElementAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementAction.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				68E6B368233F74EB0083114B /* Basics.storyboard */,
 				68E6B36A233F75790083114B /* BasicsViewController.swift */,
 				68CA93C12348ACF60056A438 /* CustomViewController.swift */,
+				684FE9302353C4E4000AC7C2 /* HeaderViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				68E6B36E233FC28E0083114B /* UIViewExtensions.swift in Sources */,
 				68CA93C22348ACF60056A438 /* CustomViewController.swift in Sources */,
 				68E6B36B233F75790083114B /* BasicsViewController.swift in Sources */,
+				684FE9312353C4E4000AC7C2 /* HeaderViewController.swift in Sources */,
 				68D40CF4233AC7FF006381FD /* SceneDelegate.swift in Sources */,
 				68CA93C72348CA200056A438 /* ElementAction.swift in Sources */,
 			);
