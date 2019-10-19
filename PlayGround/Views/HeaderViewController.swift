@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HeaderViewController: ViewController {
+class HeaderViewController: UIViewController {
     
     fileprivate lazy var header: UIView = {
         let header = UIView()

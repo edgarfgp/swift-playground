@@ -12,6 +12,8 @@ import UIKit
 
 class CustomViewController: UIViewController {
     
+    @IBOutlet weak var containerView: UIView!
+    
     fileprivate lazy var elementAction: UIView = {
         let elementAction = ElementAction.instantiateFromNib();
         elementAction?.translatesAutoresizingMaskIntoConstraints = false
@@ -29,27 +31,27 @@ class CustomViewController: UIViewController {
 
     fileprivate func setUpConstraintsForElementAction() {
         NSLayoutConstraint.activate([
-            elementAction.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            elementAction.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            elementAction.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            elementAction.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            elementAction.topAnchor.constraint(equalTo: containerView.topAnchor),
+            elementAction.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             elementAction.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     
     fileprivate func setUpConstraintsForHeaderVC() {
         NSLayoutConstraint.activate([
-            headerVC.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            headerVC.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             headerVC.view.topAnchor.constraint(equalTo: elementAction.bottomAnchor, constant: 20),
-            headerVC.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            headerVC.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             headerVC.view.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
     
     override func viewDidLoad() {
         
-        view.addSubview(elementAction)
+        containerView.addSubview(elementAction)
         addChild(headerVC)
-        view.addSubview(headerVC.view)
+        containerView.addSubview(headerVC.view)
         
         setUpConstraintsForElementAction()
         setUpConstraintsForHeaderVC()

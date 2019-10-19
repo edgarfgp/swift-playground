@@ -2,7 +2,7 @@ import UIKit
 
 class BasicsViewController: UIViewController {
     
-    @IBOutlet weak var scrollableContent: UIView!
+    @IBOutlet weak var contentView: UIView!
     
     fileprivate lazy var pickerData: [String] = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
     
@@ -70,14 +70,16 @@ class BasicsViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
+        
+        navigationItem.title = "Basic controls"
     
-        scrollableContent.addSubview(label)
-        scrollableContent.addSubview(button)
-        scrollableContent.addSubview(textField)
-        scrollableContent.addSubview(switchElement)
-        scrollableContent.addSubview(pickerElement)
-        scrollableContent.addSubview(sliderElement)
-        scrollableContent.addSubview(image)
+        contentView.addSubview(label)
+        contentView.addSubview(button)
+        contentView.addSubview(textField)
+        contentView.addSubview(switchElement)
+        contentView.addSubview(pickerElement)
+        contentView.addSubview(sliderElement)
+        contentView.addSubview(image)
         
         setUpLabelConstraints()
         setUpButtonConstraints()
@@ -90,58 +92,58 @@ class BasicsViewController: UIViewController {
     
     fileprivate func setUpLabelConstraints() {
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: scrollableContent.leadingAnchor, constant: 16),
-            label.topAnchor.constraint(equalTo: scrollableContent.topAnchor, constant: 16),
-            label.trailingAnchor.constraint(equalTo: scrollableContent.trailingAnchor, constant: -16)        ])
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)        ])
     }
         
     fileprivate func setUpButtonConstraints() {
         NSLayoutConstraint.activate([
-            button.leadingAnchor.constraint(equalTo: scrollableContent.leadingAnchor, constant: 16),
+            button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 16),
-            button.trailingAnchor.constraint(equalTo: scrollableContent.trailingAnchor, constant: -16),
+            button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             button.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
     
     fileprivate func setUpEditTextConstraints() {
         NSLayoutConstraint.activate([
-            textField.leadingAnchor.constraint(equalTo: scrollableContent.leadingAnchor, constant: 16),
+            textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             textField.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 16),
-            textField.trailingAnchor.constraint(equalTo: scrollableContent.trailingAnchor, constant: -16),
+            textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
         ])
     }
     
     fileprivate func setUpSwitchElementConstraints() {
         NSLayoutConstraint.activate([
-            switchElement.leadingAnchor.constraint(equalTo: scrollableContent.leadingAnchor, constant: 16),
+            switchElement.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             switchElement.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 16),
-            switchElement.trailingAnchor.constraint(equalTo: scrollableContent.trailingAnchor, constant: -16),
+            switchElement.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
         ])
     }
     
     fileprivate func setUpPickerElementConstraints() {
            NSLayoutConstraint.activate([
-               pickerElement.leadingAnchor.constraint(equalTo: scrollableContent.leadingAnchor, constant: 16),
+               pickerElement.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
                pickerElement.topAnchor.constraint(equalTo: switchElement.bottomAnchor, constant: 16),
-               pickerElement.trailingAnchor.constraint(equalTo: scrollableContent.trailingAnchor, constant: -16),
+               pickerElement.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
            ])
        }
     
     fileprivate func setUpSliderElementConstraints() {
         NSLayoutConstraint.activate([
-            sliderElement.leadingAnchor.constraint(equalTo: scrollableContent.leadingAnchor, constant: 16),
+            sliderElement.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             sliderElement.topAnchor.constraint(equalTo: pickerElement.bottomAnchor, constant: 16),
-            sliderElement.trailingAnchor.constraint(equalTo: scrollableContent.trailingAnchor, constant: -16)
+            sliderElement.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
         ])
     }
     
     fileprivate func setUpImageElementConstraints() {
         NSLayoutConstraint.activate([
-            image.leadingAnchor.constraint(equalTo: scrollableContent.leadingAnchor, constant: 16),
+            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             image.topAnchor.constraint(equalTo: sliderElement.bottomAnchor, constant: 16),
-            image.trailingAnchor.constraint(equalTo: scrollableContent.trailingAnchor, constant: -16),
-            image.bottomAnchor.constraint(equalTo: scrollableContent.bottomAnchor, constant: 16),
+            image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 16),
             image.heightAnchor.constraint(equalToConstant:  70)
         ])
     }
