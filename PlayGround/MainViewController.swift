@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
     
     @objc func navigateToCustom(sender : UITapGestureRecognizer) {
         let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: CustomViewController.self)) as! CustomViewController
-           navigationController?.pushViewController(newViewController, animated: true)
+        navigationController?.pushViewController(newViewController, animated: true)
         }
 
 }

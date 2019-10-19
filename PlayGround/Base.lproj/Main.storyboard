@@ -206,6 +206,27 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYI-7S-jPZ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vje-ZL-PEQ">
+                                        <rect key="frame" x="16" y="16" width="382" height="70"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="wO2-d0-AUH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Dashboard">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dashboardTapped:" destination="L0J-p1-D5k" eventType="touchUpInside" id="rQK-ud-oQH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Vje-ZL-PEQ" secondAttribute="trailing" constant="16" id="Zl3-ek-fAU"/>
+                                    <constraint firstItem="Vje-ZL-PEQ" firstAttribute="top" secondItem="wYI-7S-jPZ" secondAttribute="top" constant="16" id="eQK-k4-5Pj"/>
+                                    <constraint firstItem="Vje-ZL-PEQ" firstAttribute="leading" secondItem="wYI-7S-jPZ" secondAttribute="leading" constant="16" id="m7d-S2-MdZ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -220,7 +241,7 @@
                     <navigationItem key="navigationItem" id="dAt-d3-SRm"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="contentView" destination="aAx-Ha-Kge" id="KYd-E5-HRH"/>
+                        <outlet property="contentView" destination="wYI-7S-jPZ" id="A28-VX-O0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="owO-BU-v4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
