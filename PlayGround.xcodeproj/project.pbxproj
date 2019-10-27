@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		684FE9312353C4E4000AC7C2 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FE9302353C4E4000AC7C2 /* HeaderViewController.swift */; };
+		6827586C236F6E5F0076087E /* CheckListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6827586B236F6E5F0076087E /* CheckListItem.swift */; };
+		6827586E236F80ED0076087E /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6827586D236F80ED0076087E /* TodoList.swift */; };
+		68429BC423662686006B8148 /* ExpandableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68429BC323662686006B8148 /* ExpandableView.xib */; };
+		684FE9312353C4E4000AC7C2 /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684FE9302353C4E4000AC7C2 /* ExpandableView.swift */; };
+		6864363D236100A3007DB805 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6864363C236100A3007DB805 /* SettingsViewController.swift */; };
 		68CA93C22348ACF60056A438 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CA93C12348ACF60056A438 /* CustomViewController.swift */; };
-		68CA93C52348C94F0056A438 /* ElementAction.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68CA93C42348C94F0056A438 /* ElementAction.xib */; };
-		68CA93C72348CA200056A438 /* ElementAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CA93C62348CA200056A438 /* ElementAction.swift */; };
 		68D40CF2233AC7FF006381FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D40CF1233AC7FF006381FD /* AppDelegate.swift */; };
 		68D40CF4233AC7FF006381FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D40CF3233AC7FF006381FD /* SceneDelegate.swift */; };
 		68D40CF6233AC7FF006381FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D40CF5233AC7FF006381FD /* MainViewController.swift */; };
@@ -22,15 +24,17 @@
 		68F97634235C968700B7E7E5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F97633235C968700B7E7E5 /* WelcomeViewController.swift */; };
 		68F97636235CA0E300B7E7E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F97635235CA0E300B7E7E5 /* LoginViewController.swift */; };
 		68FE4FDE235B4F9800F75A60 /* MainNavigationContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE4FDD235B4F9800F75A60 /* MainNavigationContoller.swift */; };
-		68FE4FE2235B7E8000F75A60 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE4FE1235B7E8000F75A60 /* LogOutViewController.swift */; };
+		68FE4FE2235B7E8000F75A60 /* AddTodoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE4FE1235B7E8000F75A60 /* AddTodoItemViewController.swift */; };
 		68FE4FE5235B8AC500F75A60 /* LBTATools in Frameworks */ = {isa = PBXBuildFile; productRef = 68FE4FE4235B8AC500F75A60 /* LBTATools */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		684FE9302353C4E4000AC7C2 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
+		6827586B236F6E5F0076087E /* CheckListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItem.swift; sourceTree = "<group>"; };
+		6827586D236F80ED0076087E /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		68429BC323662686006B8148 /* ExpandableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableView.xib; sourceTree = "<group>"; };
+		684FE9302353C4E4000AC7C2 /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
+		6864363C236100A3007DB805 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		68CA93C12348ACF60056A438 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
-		68CA93C42348C94F0056A438 /* ElementAction.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementAction.xib; sourceTree = "<group>"; };
-		68CA93C62348CA200056A438 /* ElementAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementAction.swift; sourceTree = "<group>"; };
 		68D40CEE233AC7FF006381FD /* PlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D40CF1233AC7FF006381FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68D40CF3233AC7FF006381FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +48,7 @@
 		68F97633235C968700B7E7E5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		68F97635235CA0E300B7E7E5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		68FE4FDD235B4F9800F75A60 /* MainNavigationContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationContoller.swift; sourceTree = "<group>"; };
-		68FE4FE1235B7E8000F75A60 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		68FE4FE1235B7E8000F75A60 /* AddTodoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,15 +63,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		68CA93C32348C8ED0056A438 /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				68CA93C42348C94F0056A438 /* ElementAction.xib */,
-				68CA93C62348CA200056A438 /* ElementAction.swift */,
-			);
-			path = Controls;
-			sourceTree = "<group>";
-		};
 		68D40CE5233AC7FF006381FD = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +84,6 @@
 			children = (
 				68FE4FE0235B60CF00F75A60 /* ViewModels */,
 				68FE4FDF235B60BF00F75A60 /* Models */,
-				68CA93C32348C8ED0056A438 /* Controls */,
 				68E6B36C233FC2680083114B /* Extensions */,
 				68E6B367233F747E0083114B /* Views */,
 				68D40CF1233AC7FF006381FD /* AppDelegate.swift */,
@@ -109,10 +103,12 @@
 			children = (
 				68E6B36A233F75790083114B /* BasicsViewController.swift */,
 				68CA93C12348ACF60056A438 /* CustomViewController.swift */,
-				684FE9302353C4E4000AC7C2 /* HeaderViewController.swift */,
-				68FE4FE1235B7E8000F75A60 /* LogOutViewController.swift */,
+				684FE9302353C4E4000AC7C2 /* ExpandableView.swift */,
+				68FE4FE1235B7E8000F75A60 /* AddTodoItemViewController.swift */,
 				68F97633235C968700B7E7E5 /* WelcomeViewController.swift */,
 				68F97635235CA0E300B7E7E5 /* LoginViewController.swift */,
+				6864363C236100A3007DB805 /* SettingsViewController.swift */,
+				68429BC323662686006B8148 /* ExpandableView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +124,8 @@
 		68FE4FDF235B60BF00F75A60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6827586B236F6E5F0076087E /* CheckListItem.swift */,
+				6827586D236F80ED0076087E /* TodoList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,9 +201,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68CA93C52348C94F0056A438 /* ElementAction.xib in Resources */,
 				68D40CFE233AC800006381FD /* LaunchScreen.storyboard in Resources */,
 				68D40CFB233AC800006381FD /* Assets.xcassets in Resources */,
+				68429BC423662686006B8148 /* ExpandableView.xib in Resources */,
 				68D40CF9233AC7FF006381FD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,16 +216,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				68F97636235CA0E300B7E7E5 /* LoginViewController.swift in Sources */,
+				6827586E236F80ED0076087E /* TodoList.swift in Sources */,
+				6827586C236F6E5F0076087E /* CheckListItem.swift in Sources */,
 				68D40CF6233AC7FF006381FD /* MainViewController.swift in Sources */,
 				68FE4FDE235B4F9800F75A60 /* MainNavigationContoller.swift in Sources */,
 				68D40CF2233AC7FF006381FD /* AppDelegate.swift in Sources */,
 				68E6B36E233FC28E0083114B /* UIViewExtensions.swift in Sources */,
 				68CA93C22348ACF60056A438 /* CustomViewController.swift in Sources */,
 				68E6B36B233F75790083114B /* BasicsViewController.swift in Sources */,
-				684FE9312353C4E4000AC7C2 /* HeaderViewController.swift in Sources */,
+				684FE9312353C4E4000AC7C2 /* ExpandableView.swift in Sources */,
 				68D40CF4233AC7FF006381FD /* SceneDelegate.swift in Sources */,
-				68FE4FE2235B7E8000F75A60 /* LogOutViewController.swift in Sources */,
-				68CA93C72348CA200056A438 /* ElementAction.swift in Sources */,
+				68FE4FE2235B7E8000F75A60 /* AddTodoItemViewController.swift in Sources */,
+				6864363D236100A3007DB805 /* SettingsViewController.swift in Sources */,
 				68F97634235C968700B7E7E5 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

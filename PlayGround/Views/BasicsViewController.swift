@@ -69,6 +69,18 @@ class BasicsViewController: UIViewController {
         return image
     }()
     
+    fileprivate lazy var segmentedControl: UISegmentedControl = {
+        let elements = ["First", "Second"]
+        let segment = UISegmentedControl(items: elements)
+        segment.layer.cornerRadius = 4.0
+        segment.selectedSegmentIndex = 0
+        segment.layer.borderWidth = 5
+        segment.layer.borderColor = CGColor.init(srgbRed: 0, green: 0, blue: 1, alpha: 0)
+        segment.translatesAutoresizingMaskIntoConstraints = false
+        return segment
+    }()
+    
+    
     override func viewDidLoad() {
         
         navigationItem.title = "Basic controls"
@@ -80,6 +92,7 @@ class BasicsViewController: UIViewController {
         contentView.addSubview(pickerElement)
         contentView.addSubview(sliderElement)
         contentView.addSubview(image)
+        contentView.addSubview(segmentedControl)
         
         setUpLabelConstraints()
         setUpButtonConstraints()
@@ -88,13 +101,16 @@ class BasicsViewController: UIViewController {
         setUpPickerElementConstraints()
         setUpSliderElementConstraints()
         setUpImageElementConstraints()
+        setUpSegmentElementConstraints()
+        
     }
     
     fileprivate func setUpLabelConstraints() {
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)        ])
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+        ])
     }
         
     fileprivate func setUpButtonConstraints() {
@@ -143,8 +159,17 @@ class BasicsViewController: UIViewController {
             image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             image.topAnchor.constraint(equalTo: sliderElement.bottomAnchor, constant: 16),
             image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 16),
             image.heightAnchor.constraint(equalToConstant:  70)
+        ])
+    }
+    
+    fileprivate func setUpSegmentElementConstraints() {
+        NSLayoutConstraint.activate([
+            segmentedControl.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            segmentedControl.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 16),
+            segmentedControl.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            segmentedControl.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 16),
+            segmentedControl.heightAnchor.constraint(equalToConstant:  50)
         ])
     }
 }

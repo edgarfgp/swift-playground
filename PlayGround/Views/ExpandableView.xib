@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ExpandableView" customModule="PlayGround" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="we8-ju-bG0">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="5HJ-JE-8lc">
+                            <rect key="frame" x="374" y="13" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="BeK-7S-Z8L"/>
+                                <constraint firstAttribute="height" constant="24" id="iOC-9T-jOa"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="5HJ-JE-8lc" firstAttribute="top" secondItem="we8-ju-bG0" secondAttribute="top" constant="13" id="Vos-S4-qiw"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="50" id="Zpp-id-DF1"/>
+                        <constraint firstAttribute="trailing" secondItem="5HJ-JE-8lc" secondAttribute="trailing" constant="16" id="q4w-0a-8kp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="we8-ju-bG0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Bba-4g-t0W"/>
+                <constraint firstAttribute="bottom" secondItem="we8-ju-bG0" secondAttribute="bottom" id="LIz-Fe-Mjj"/>
+                <constraint firstAttribute="trailing" secondItem="we8-ju-bG0" secondAttribute="trailing" id="Obp-Lf-3tM"/>
+                <constraint firstItem="we8-ju-bG0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i3D-oH-omN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrowImage" destination="5HJ-JE-8lc" id="vcq-jQ-8xD"/>
+                <outlet property="heightConstraint" destination="Zpp-id-DF1" id="HXa-mw-9om"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="140.625"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow_down" width="24" height="24"/>
+    </resources>
+</document>

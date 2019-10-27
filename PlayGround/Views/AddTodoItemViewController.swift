@@ -10,14 +10,18 @@ import Foundation
 import UIKit
 import LBTATools
 
-class LogOutViewController: UIViewController {
+class AddTodoItemViewController: UIViewController {
     
     @IBOutlet var contentView: UIView!
     
-    @IBAction func dashboardTapped(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
-    }
     override func viewDidLoad() {
-        navigationItem.hidesBackButton = true
+    }
+    
+    @IBAction func cancellTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func saveTapped(_ sender: Any) {
+         navigationController?.popViewController(animated: true)
     }
 }

@@ -14,46 +14,51 @@ class CustomViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     
-    fileprivate lazy var elementAction: UIView = {
-        let elementAction = ElementAction.instantiateFromNib();
-        elementAction?.translatesAutoresizingMaskIntoConstraints = false
-        elementAction?.backgroundColor = .orange
-        return elementAction!
-    }()
+    var isExpanded : Bool = false
     
-    fileprivate lazy var headerVC : HeaderViewController = {
-        let header = HeaderViewController()
-        header.view.backgroundColor = .green
-        header.didMove(toParent: self)
-        header.view.translatesAutoresizingMaskIntoConstraints = false
-        return header
+    fileprivate lazy var expandedView : ExpandableView = {
+        let expandableView = ExpandableView.instantiateFromNib();
+        expandableView?.translatesAutoresizingMaskIntoConstraints = false
+        return expandableView!
     }()
-
-    fileprivate func setUpConstraintsForElementAction() {
-        NSLayoutConstraint.activate([
-            elementAction.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            elementAction.topAnchor.constraint(equalTo: containerView.topAnchor),
-            elementAction.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            elementAction.heightAnchor.constraint(equalToConstant: 100)
-        ])
-    }
-    
-    fileprivate func setUpConstraintsForHeaderVC() {
-        NSLayoutConstraint.activate([
-            headerVC.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            headerVC.view.topAnchor.constraint(equalTo: elementAction.bottomAnchor, constant: 20),
-            headerVC.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            headerVC.view.heightAnchor.constraint(equalToConstant: 300)
-        ])
-    }
     
     override func viewDidLoad() {
         
-        containerView.addSubview(elementAction)
-        addChild(headerVC)
-        containerView.addSubview(headerVC.view)
+        let basicGesture = UITapGestureRecognizer(target: self, action: #selector(self.didCustomViewEAxpand))
+        expandedView.addGestureRecognizer(basicGesture)
         
-        setUpConstraintsForElementAction()
-        setUpConstraintsForHeaderVC()
+        containerView.addSubview(expandedView)
+        expandedView.applyCustomStyle()
+        setUpConstraintsForExpandableView()
+        expandedView.applyCustomStyle()
     }
+    
+    @objc func didCustomViewEAxpand(sender : UITapGestureRecognizer) {
+        
+        if !isExpanded {
+            isExpanded = true
+            UIView.animate(withDuration: 0.8, animations: {
+                self.expandedView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+                self.expandedView.arrowImage.transform = CGAffineTransform(rotationAngle: .pi)
+                self.containerView.layoutIfNeeded()
+            })
+        } else {
+            isExpanded  = false
+            UIView.animate(withDuration: 0.8, animations: {
+                self.expandedView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                self.expandedView.arrowImage.transform = CGAffineTransform(rotationAngle: 0)
+                self.containerView.layoutIfNeeded()
+            })
+        }
+        
+        containerView.layoutIfNeeded()
+    }
+    
+   fileprivate func setUpConstraintsForExpandableView() {
+       NSLayoutConstraint.activate([
+           expandedView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+           expandedView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 16),
+           expandedView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16)
+       ])
+   }
 }

@@ -59,14 +59,31 @@
                                                     <constraint firstAttribute="bottom" secondItem="7wT-ZL-Pt5" secondAttribute="bottom" constant="16" id="nvs-3R-fRd"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfy-dP-FGI">
+                                                <rect key="frame" x="16" y="153" width="382" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="WGr-Vu-P9V"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Table view">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tableViewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V8u-b6-dWa"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="QuI-Ug-fvi" secondAttribute="trailing" constant="16" id="8UY-v2-N4d"/>
                                             <constraint firstItem="0j1-JT-cv5" firstAttribute="top" secondItem="QuI-Ug-fvi" secondAttribute="bottom" constant="16" id="Efu-ex-qag"/>
+                                            <constraint firstAttribute="trailing" secondItem="tfy-dP-FGI" secondAttribute="trailing" constant="16" id="QWU-YG-kIt"/>
                                             <constraint firstAttribute="trailing" secondItem="0j1-JT-cv5" secondAttribute="trailing" constant="16" id="SEp-VR-Zge"/>
                                             <constraint firstItem="QuI-Ug-fvi" firstAttribute="top" secondItem="GhG-C2-TRn" secondAttribute="top" constant="16" id="WQ2-bc-NSl"/>
+                                            <constraint firstItem="tfy-dP-FGI" firstAttribute="leading" secondItem="GhG-C2-TRn" secondAttribute="leading" constant="16" id="cMr-vt-xed"/>
                                             <constraint firstItem="QuI-Ug-fvi" firstAttribute="leading" secondItem="GhG-C2-TRn" secondAttribute="leading" constant="16" id="ciF-il-DCf"/>
+                                            <constraint firstItem="tfy-dP-FGI" firstAttribute="top" secondItem="0j1-JT-cv5" secondAttribute="bottom" constant="16" id="dT0-98-2WA"/>
                                             <constraint firstItem="0j1-JT-cv5" firstAttribute="leading" secondItem="QuI-Ug-fvi" secondAttribute="leading" id="x5B-rP-bzl"/>
                                         </constraints>
                                     </view>
@@ -84,32 +101,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VkK-Ih-AJi" firstAttribute="leading" secondItem="PcP-Ja-Vwm" secondAttribute="leading" id="Jqy-MY-3p7"/>
-                            <constraint firstItem="VkK-Ih-AJi" firstAttribute="top" secondItem="PcP-Ja-Vwm" secondAttribute="top" id="Whg-Tr-6y3"/>
-                            <constraint firstItem="PcP-Ja-Vwm" firstAttribute="bottom" secondItem="VkK-Ih-AJi" secondAttribute="bottom" id="hNm-JD-PWh"/>
-                            <constraint firstItem="PcP-Ja-Vwm" firstAttribute="trailing" secondItem="VkK-Ih-AJi" secondAttribute="trailing" id="qdO-kU-4Ht"/>
+                            <constraint firstItem="VkK-Ih-AJi" firstAttribute="leading" secondItem="djb-9v-XQ6" secondAttribute="leading" id="Jqy-MY-3p7"/>
+                            <constraint firstItem="VkK-Ih-AJi" firstAttribute="top" secondItem="djb-9v-XQ6" secondAttribute="top" id="Whg-Tr-6y3"/>
+                            <constraint firstItem="djb-9v-XQ6" firstAttribute="bottom" secondItem="VkK-Ih-AJi" secondAttribute="bottom" id="hNm-JD-PWh"/>
+                            <constraint firstItem="djb-9v-XQ6" firstAttribute="trailing" secondItem="VkK-Ih-AJi" secondAttribute="trailing" id="qdO-kU-4Ht"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PcP-Ja-Vwm"/>
+                        <viewLayoutGuide key="safeArea" id="djb-9v-XQ6"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Dashboard" id="gMZ-vz-GCq">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="power" catalog="system" id="bMY-yJ-mtV">
-                            <connections>
-                                <segue destination="L0J-p1-D5k" kind="show" identifier="logoutSegue" id="kIV-24-qwr"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Dashboard" id="gMZ-vz-GCq"/>
                     <connections>
                         <outlet property="basicControls" destination="QuI-Ug-fvi" id="n3i-aH-v49"/>
                         <outlet property="containerView" destination="GhG-C2-TRn" id="rQQ-U9-gbH"/>
                         <outlet property="customControls" destination="0j1-JT-cv5" id="FjL-fS-fEX"/>
+                        <outlet property="tableViewButton" destination="tfy-dP-FGI" id="58r-da-1Sm"/>
                         <segue destination="hlQ-S4-SZN" kind="show" id="hLc-Te-cNK"/>
                         <segue destination="jKv-KN-tZ5" kind="show" id="G6L-1p-25N"/>
                         <segue destination="8yN-MQ-gzD" kind="show" id="R9z-xM-Tvb"/>
+                        <segue destination="G06-cK-MBL" kind="show" id="eCY-rm-g7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="51"/>
+            <point key="canvasLocation" x="850.72463768115949" y="50.892857142857139"/>
         </scene>
         <!--Basics-->
         <scene sceneID="8QK-Ki-FbC">
@@ -138,12 +151,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="csE-6S-x3t" firstAttribute="top" secondItem="L93-2n-CkH" secondAttribute="top" id="bWi-vf-1ei"/>
-                            <constraint firstItem="csE-6S-x3t" firstAttribute="trailing" secondItem="L93-2n-CkH" secondAttribute="trailing" id="s2p-WF-q56"/>
-                            <constraint firstItem="L93-2n-CkH" firstAttribute="leading" secondItem="csE-6S-x3t" secondAttribute="leading" id="sRD-jT-B1Y"/>
-                            <constraint firstItem="csE-6S-x3t" firstAttribute="bottom" secondItem="L93-2n-CkH" secondAttribute="bottom" id="z0X-z1-ayK"/>
+                            <constraint firstItem="71F-hn-m9c" firstAttribute="top" secondItem="L93-2n-CkH" secondAttribute="top" id="bWi-vf-1ei"/>
+                            <constraint firstItem="71F-hn-m9c" firstAttribute="trailing" secondItem="L93-2n-CkH" secondAttribute="trailing" id="s2p-WF-q56"/>
+                            <constraint firstItem="L93-2n-CkH" firstAttribute="leading" secondItem="71F-hn-m9c" secondAttribute="leading" id="sRD-jT-B1Y"/>
+                            <constraint firstItem="71F-hn-m9c" firstAttribute="bottom" secondItem="L93-2n-CkH" secondAttribute="bottom" id="z0X-z1-ayK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="csE-6S-x3t"/>
+                        <viewLayoutGuide key="safeArea" id="71F-hn-m9c"/>
                     </view>
                     <navigationItem key="navigationItem" title="Basics" id="T0H-jk-icI"/>
                     <connections>
@@ -190,17 +203,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="yUd-Xl-qeJ" firstAttribute="trailing" secondItem="RUX-l1-Mo0" secondAttribute="trailing" constant="16" id="ECg-rN-DHb"/>
-                            <constraint firstItem="RUX-l1-Mo0" firstAttribute="leading" secondItem="yUd-Xl-qeJ" secondAttribute="leading" constant="16" id="LuT-LH-U5F"/>
-                            <constraint firstItem="yUd-Xl-qeJ" firstAttribute="trailing" secondItem="PFZ-Mv-62c" secondAttribute="trailing" constant="16" id="O9s-DK-NiM"/>
-                            <constraint firstItem="Xx0-8d-OVl" firstAttribute="leading" secondItem="yUd-Xl-qeJ" secondAttribute="leading" constant="16" id="Qqw-Ry-gbI"/>
+                            <constraint firstItem="Iik-dU-0Ce" firstAttribute="trailing" secondItem="RUX-l1-Mo0" secondAttribute="trailing" constant="16" id="ECg-rN-DHb"/>
+                            <constraint firstItem="RUX-l1-Mo0" firstAttribute="leading" secondItem="Iik-dU-0Ce" secondAttribute="leading" constant="16" id="LuT-LH-U5F"/>
+                            <constraint firstItem="Iik-dU-0Ce" firstAttribute="trailing" secondItem="PFZ-Mv-62c" secondAttribute="trailing" constant="16" id="O9s-DK-NiM"/>
+                            <constraint firstItem="Xx0-8d-OVl" firstAttribute="leading" secondItem="Iik-dU-0Ce" secondAttribute="leading" constant="16" id="Qqw-Ry-gbI"/>
                             <constraint firstItem="PFZ-Mv-62c" firstAttribute="top" secondItem="RUX-l1-Mo0" secondAttribute="bottom" constant="32" id="UOj-6s-n0A"/>
-                            <constraint firstItem="yUd-Xl-qeJ" firstAttribute="trailing" secondItem="Xx0-8d-OVl" secondAttribute="trailing" constant="16" id="f9v-YH-Q0Z"/>
-                            <constraint firstItem="PFZ-Mv-62c" firstAttribute="leading" secondItem="yUd-Xl-qeJ" secondAttribute="leading" constant="16" id="g2g-Ob-wGO"/>
-                            <constraint firstItem="Xx0-8d-OVl" firstAttribute="top" secondItem="yUd-Xl-qeJ" secondAttribute="top" constant="32" id="rQ8-fb-rUZ"/>
+                            <constraint firstItem="Iik-dU-0Ce" firstAttribute="trailing" secondItem="Xx0-8d-OVl" secondAttribute="trailing" constant="16" id="f9v-YH-Q0Z"/>
+                            <constraint firstItem="PFZ-Mv-62c" firstAttribute="leading" secondItem="Iik-dU-0Ce" secondAttribute="leading" constant="16" id="g2g-Ob-wGO"/>
+                            <constraint firstItem="Xx0-8d-OVl" firstAttribute="top" secondItem="Iik-dU-0Ce" secondAttribute="top" constant="32" id="rQ8-fb-rUZ"/>
                             <constraint firstItem="RUX-l1-Mo0" firstAttribute="top" secondItem="Xx0-8d-OVl" secondAttribute="bottom" constant="24" id="vwX-sU-mn1"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="yUd-Xl-qeJ"/>
+                        <viewLayoutGuide key="safeArea" id="Iik-dU-0Ce"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="RUX-l1-Mo0" id="wps-Oi-EWC"/>
@@ -245,17 +258,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="jT3-pZ-Jei" firstAttribute="top" secondItem="wdH-Vr-hmf" secondAttribute="top" constant="24" id="F5g-xQ-Iue"/>
-                            <constraint firstItem="wdH-Vr-hmf" firstAttribute="trailing" secondItem="X4F-2h-ykd" secondAttribute="trailing" constant="12" id="Jk4-0r-CLt"/>
-                            <constraint firstItem="wdH-Vr-hmf" firstAttribute="trailing" secondItem="cKl-gA-txD" secondAttribute="trailing" constant="16" id="LcJ-Ow-sde"/>
-                            <constraint firstItem="jT3-pZ-Jei" firstAttribute="leading" secondItem="wdH-Vr-hmf" secondAttribute="leading" constant="16" id="PQN-Is-Lh0"/>
-                            <constraint firstItem="cKl-gA-txD" firstAttribute="leading" secondItem="wdH-Vr-hmf" secondAttribute="leading" constant="16" id="YQZ-uL-YcC"/>
+                            <constraint firstItem="jT3-pZ-Jei" firstAttribute="top" secondItem="1DQ-G6-dqY" secondAttribute="top" constant="24" id="F5g-xQ-Iue"/>
+                            <constraint firstItem="1DQ-G6-dqY" firstAttribute="trailing" secondItem="X4F-2h-ykd" secondAttribute="trailing" constant="12" id="Jk4-0r-CLt"/>
+                            <constraint firstItem="1DQ-G6-dqY" firstAttribute="trailing" secondItem="cKl-gA-txD" secondAttribute="trailing" constant="16" id="LcJ-Ow-sde"/>
+                            <constraint firstItem="jT3-pZ-Jei" firstAttribute="leading" secondItem="1DQ-G6-dqY" secondAttribute="leading" constant="16" id="PQN-Is-Lh0"/>
+                            <constraint firstItem="cKl-gA-txD" firstAttribute="leading" secondItem="1DQ-G6-dqY" secondAttribute="leading" constant="16" id="YQZ-uL-YcC"/>
                             <constraint firstItem="cKl-gA-txD" firstAttribute="top" secondItem="X4F-2h-ykd" secondAttribute="bottom" constant="24" id="aD8-B8-AOb"/>
-                            <constraint firstItem="wdH-Vr-hmf" firstAttribute="trailing" secondItem="jT3-pZ-Jei" secondAttribute="trailing" constant="16" id="g7M-Rf-xS3"/>
+                            <constraint firstItem="1DQ-G6-dqY" firstAttribute="trailing" secondItem="jT3-pZ-Jei" secondAttribute="trailing" constant="16" id="g7M-Rf-xS3"/>
                             <constraint firstItem="X4F-2h-ykd" firstAttribute="top" secondItem="jT3-pZ-Jei" secondAttribute="bottom" constant="24" id="kkv-cO-cQT"/>
-                            <constraint firstItem="X4F-2h-ykd" firstAttribute="leading" secondItem="wdH-Vr-hmf" secondAttribute="leading" constant="20" id="zQN-Ub-GoO"/>
+                            <constraint firstItem="X4F-2h-ykd" firstAttribute="leading" secondItem="1DQ-G6-dqY" secondAttribute="leading" constant="20" id="zQN-Ub-GoO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="wdH-Vr-hmf"/>
+                        <viewLayoutGuide key="safeArea" id="1DQ-G6-dqY"/>
                     </view>
                     <navigationItem key="navigationItem" id="rc2-qc-obo"/>
                     <connections>
@@ -296,12 +309,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="09h-1f-wFp" firstAttribute="leading" secondItem="fwK-7D-96L" secondAttribute="leading" id="0zk-L2-FVy"/>
-                            <constraint firstItem="fwK-7D-96L" firstAttribute="trailing" secondItem="09h-1f-wFp" secondAttribute="trailing" id="Wm6-QV-1dE"/>
-                            <constraint firstItem="09h-1f-wFp" firstAttribute="top" secondItem="fwK-7D-96L" secondAttribute="top" id="gmG-F4-uBJ"/>
-                            <constraint firstItem="fwK-7D-96L" firstAttribute="bottom" secondItem="09h-1f-wFp" secondAttribute="bottom" id="pa2-FS-vOu"/>
+                            <constraint firstItem="09h-1f-wFp" firstAttribute="leading" secondItem="VXb-T1-LRy" secondAttribute="leading" id="0zk-L2-FVy"/>
+                            <constraint firstItem="VXb-T1-LRy" firstAttribute="trailing" secondItem="09h-1f-wFp" secondAttribute="trailing" id="Wm6-QV-1dE"/>
+                            <constraint firstItem="09h-1f-wFp" firstAttribute="top" secondItem="VXb-T1-LRy" secondAttribute="top" id="gmG-F4-uBJ"/>
+                            <constraint firstItem="VXb-T1-LRy" firstAttribute="bottom" secondItem="09h-1f-wFp" secondAttribute="bottom" id="pa2-FS-vOu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fwK-7D-96L"/>
+                        <viewLayoutGuide key="safeArea" id="VXb-T1-LRy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Custom" id="CNK-20-aam"/>
                     <connections>
@@ -312,49 +325,90 @@
             </objects>
             <point key="canvasLocation" x="1771" y="469"/>
         </scene>
-        <!--Log Out View Controller-->
+        <!--CheckListItem-->
+        <scene sceneID="XTZ-xa-n68">
+            <objects>
+                <tableViewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G06-cK-MBL" customClass="SettingsViewController" customModule="PlayGround" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hBV-yQ-EMa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="CheckListItem" id="mSa-QS-1oy">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mSa-QS-1oy" id="tv9-FQ-UaJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="370" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaX-tQ-Ydy">
+                                            <rect key="frame" x="16" y="11.5" width="338" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WaX-tQ-Ydy" firstAttribute="leading" secondItem="tv9-FQ-UaJ" secondAttribute="leading" constant="16" id="BYR-hU-TaO"/>
+                                        <constraint firstItem="WaX-tQ-Ydy" firstAttribute="top" secondItem="tv9-FQ-UaJ" secondAttribute="top" priority="750" constant="11.5" id="e1W-mx-xCO"/>
+                                        <constraint firstAttribute="bottom" secondItem="WaX-tQ-Ydy" secondAttribute="bottom" priority="750" constant="11.5" id="f6T-Co-lg8"/>
+                                        <constraint firstAttribute="trailing" secondItem="WaX-tQ-Ydy" secondAttribute="trailing" constant="16" id="keW-bC-lC8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="G06-cK-MBL" id="Cy3-pO-O05"/>
+                            <outlet property="delegate" destination="G06-cK-MBL" id="LvN-Tw-CUR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="CheckListItem" largeTitleDisplayMode="always" id="GrH-QW-Efp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="T7h-hs-Tib">
+                            <connections>
+                                <action selector="addTodoButton:" destination="G06-cK-MBL" id="m4s-F8-Qqi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="todotableView" destination="hBV-yQ-EMa" id="Ddt-Ec-FY9"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61X-sW-nsc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-169" y="-735"/>
+        </scene>
+        <!--Add Todo Item View Controller-->
         <scene sceneID="kdS-ij-SON">
             <objects>
-                <viewController storyboardIdentifier="LogOutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L0J-p1-D5k" customClass="LogOutViewController" customModule="PlayGround" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddTodoItemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L0J-p1-D5k" customClass="AddTodoItemViewController" customModule="PlayGround" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aAx-Ha-Kge">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYI-7S-jPZ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vje-ZL-PEQ">
-                                        <rect key="frame" x="16" y="16" width="382" height="70"/>
-                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="wO2-d0-AUH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Dashboard">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="dashboardTapped:" destination="L0J-p1-D5k" eventType="touchUpInside" id="rQK-ud-oQH"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Vje-ZL-PEQ" secondAttribute="trailing" constant="16" id="Zl3-ek-fAU"/>
-                                    <constraint firstItem="Vje-ZL-PEQ" firstAttribute="top" secondItem="wYI-7S-jPZ" secondAttribute="top" constant="16" id="eQK-k4-5Pj"/>
-                                    <constraint firstItem="Vje-ZL-PEQ" firstAttribute="leading" secondItem="wYI-7S-jPZ" secondAttribute="leading" constant="16" id="m7d-S2-MdZ"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="wYI-7S-jPZ" firstAttribute="leading" secondItem="udJ-xp-Y4H" secondAttribute="leading" id="IW2-Fc-USV"/>
-                            <constraint firstItem="udJ-xp-Y4H" firstAttribute="trailing" secondItem="wYI-7S-jPZ" secondAttribute="trailing" id="Sa2-X6-dq4"/>
-                            <constraint firstItem="udJ-xp-Y4H" firstAttribute="bottom" secondItem="wYI-7S-jPZ" secondAttribute="bottom" id="Znh-yU-E5d"/>
-                            <constraint firstItem="wYI-7S-jPZ" firstAttribute="top" secondItem="udJ-xp-Y4H" secondAttribute="top" id="gxy-Vt-7RA"/>
+                            <constraint firstItem="wYI-7S-jPZ" firstAttribute="leading" secondItem="doY-i9-Pu8" secondAttribute="leading" id="IW2-Fc-USV"/>
+                            <constraint firstItem="doY-i9-Pu8" firstAttribute="trailing" secondItem="wYI-7S-jPZ" secondAttribute="trailing" id="Sa2-X6-dq4"/>
+                            <constraint firstItem="doY-i9-Pu8" firstAttribute="bottom" secondItem="wYI-7S-jPZ" secondAttribute="bottom" id="Znh-yU-E5d"/>
+                            <constraint firstItem="wYI-7S-jPZ" firstAttribute="top" secondItem="doY-i9-Pu8" secondAttribute="top" id="gxy-Vt-7RA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="udJ-xp-Y4H"/>
+                        <viewLayoutGuide key="safeArea" id="doY-i9-Pu8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dAt-d3-SRm"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="dAt-d3-SRm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RRm-Mz-jAv">
+                            <connections>
+                                <action selector="cancellTapped:" destination="L0J-p1-D5k" id="NjB-di-dVT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rQz-pj-IMa">
+                            <connections>
+                                <action selector="saveTapped:" destination="L0J-p1-D5k" id="h2p-Fp-Q0g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="contentView" destination="wYI-7S-jPZ" id="A28-VX-O0j"/>
@@ -383,7 +437,4 @@
             <point key="canvasLocation" x="114" y="51"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="power" catalog="system" width="64" height="62"/>
-    </resources>
 </document>

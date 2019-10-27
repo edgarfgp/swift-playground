@@ -9,6 +9,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet weak var tableViewButton: UIButton!
+    
     fileprivate lazy var loginExample: UIView = {
         let login = UIView()
         login.backgroundColor = .systemBlue
@@ -40,6 +42,8 @@ class MainViewController: UIViewController {
         basicControls.addGestureRecognizer(basicGesture)
         customControls.addGestureRecognizer(customGesture)
         loginExample.addGestureRecognizer(loginGesture)
+        
+        tableViewButton.applyCustomStyle()
                 
         basicControls.applyCustomStyle()
         customControls.applyCustomStyle()
@@ -47,6 +51,11 @@ class MainViewController: UIViewController {
         
         setUpContraintsForLoginSample()
         
+    }
+    
+    @IBAction func tableViewTapped(_ sender: Any) {
+         let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: SettingsViewController.self)) as! SettingsViewController
+                   navigationController?.pushViewController(newViewController, animated: true)
     }
     
     @objc func navigateToBasic(sender : UITapGestureRecognizer) {
@@ -67,7 +76,7 @@ class MainViewController: UIViewController {
     func setUpContraintsForLoginSample() {
         NSLayoutConstraint.activate([
             loginExample.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
-            loginExample.topAnchor.constraint(equalTo: customControls.bottomAnchor, constant: 16),
+            loginExample.topAnchor.constraint(equalTo: tableViewButton.bottomAnchor, constant: 16),
             loginExample.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             loginExample.heightAnchor.constraint(equalToConstant: 50)
         ])

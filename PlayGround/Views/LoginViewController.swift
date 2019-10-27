@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         navigationItem.title = "Login"
         
-        loginButton.applyCustomStyle()
+       loginButton.applyCustomStyle()
     }
     
     @IBAction func loginTapped(_ sender: Any) {
