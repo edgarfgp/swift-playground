@@ -46,7 +46,7 @@ class CustomViewController: UIViewController {
             isExpanded  = false
             UIView.animate(withDuration: 0.8, animations: {
                 self.expandedView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                self.expandedView.arrowImage.transform = CGAffineTransform(rotationAngle: 0)
+                self.expandedView.arrowImage.transform = CGAffineTransform.identity
                 self.containerView.layoutIfNeeded()
             })
         }
