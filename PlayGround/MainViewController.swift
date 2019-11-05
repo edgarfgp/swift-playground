@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func tableViewTapped(_ sender: Any) {
-         let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: SettingsViewController.self)) as! SettingsViewController
+         let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: TodoViewController.self)) as! TodoViewController
                    navigationController?.pushViewController(newViewController, animated: true)
     }
     

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SettingsViewController: UIViewController {
+class TodoViewController: UIViewController {
         
     @IBOutlet var todotableView: UITableView!
     
@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController {
     }
 }
 
-extension SettingsViewController : UITableViewDataSource {
+extension TodoViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return todoList.todos.count
@@ -47,7 +47,7 @@ extension SettingsViewController : UITableViewDataSource {
     }
     }
 
-extension SettingsViewController : UITableViewDelegate {
+extension TodoViewController : UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){
@@ -64,7 +64,7 @@ extension SettingsViewController : UITableViewDelegate {
     }
 }
 
-extension SettingsViewController : AddItemDelegate {
+extension TodoViewController : AddItemDelegate {
     func didUserAddTodoItem(textTodo: String) {
         _ = todoList.newTodo(text: textTodo)
         todotableView.reloadData()
