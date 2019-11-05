@@ -27,12 +27,8 @@ class SettingsViewController: UIViewController {
     
     @IBAction func addTodoButton(_ sender: Any) {
         let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: AddTodoItemViewController.self)) as! AddTodoItemViewController
+        newViewController.addItemDelegate = self
         navigationController?.pushViewController(newViewController, animated: true)
-//        let newRowIndex = todoList.todos.count
-//        _ = todoList.newTodo()
-//        let indexPath = IndexPath(row: newRowIndex, section: 0)
-//        let indexPaths = [indexPath]
-//        todotableView.insertRows(at: indexPaths, with: .automatic)
     }
 }
 
@@ -47,9 +43,8 @@ extension SettingsViewController : UITableViewDataSource {
         let item = todoList.todos[indexPath.row]
         configureText(for: cell, with: item)
         configureCheckMark(for: cell, with: item)
-        
         return cell
-        }
+    }
     }
 
 extension SettingsViewController : UITableViewDelegate {
@@ -69,7 +64,12 @@ extension SettingsViewController : UITableViewDelegate {
     }
 }
 
-extension SettingsViewController {
+extension SettingsViewController : AddItemDelegate {
+    func didUserAddTodoItem(textTodo: String) {
+        _ = todoList.newTodo(text: textTodo)
+        todotableView.reloadData()
+    }
+    
     func configureCheckMark(for cell: UITableViewCell, with item: CheckListItem) {
         if item.isCHecked {
           cell.accessoryType = .checkmark

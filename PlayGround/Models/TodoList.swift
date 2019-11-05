@@ -34,10 +34,18 @@ class TodoList {
       
     }
     
-    func newTodo() -> CheckListItem {
+    func newRandomTodo() -> CheckListItem {
         let item = CheckListItem()
         item.text = ramdomTitle()
         item.isCHecked = true
+        todos.append(item)
+        return item
+    }
+    
+    func newTodo(text: String) -> CheckListItem {
+        let item = CheckListItem()
+        item.text = text
+        item.isCHecked = false
         todos.append(item)
         return item
     }

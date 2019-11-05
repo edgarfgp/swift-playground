@@ -271,6 +271,21 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYI-7S-jPZ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new todo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F3x-ND-0bd">
+                                        <rect key="frame" x="16" y="16" width="382" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9yl-bp-Umd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="F3x-ND-0bd" firstAttribute="leading" secondItem="wYI-7S-jPZ" secondAttribute="leading" constant="16" id="Jum-pk-6fn"/>
+                                    <constraint firstAttribute="trailing" secondItem="F3x-ND-0bd" secondAttribute="trailing" constant="16" id="Nux-Db-y8A"/>
+                                    <constraint firstItem="F3x-ND-0bd" firstAttribute="top" secondItem="wYI-7S-jPZ" secondAttribute="top" constant="16" id="ViL-t9-51a"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -297,11 +312,12 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="contentView" destination="wYI-7S-jPZ" id="A28-VX-O0j"/>
+                        <outlet property="newTodoTextField" destination="F3x-ND-0bd" id="deZ-4R-C8N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="owO-BU-v4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="-706"/>
+            <point key="canvasLocation" x="850.72463768115949" y="-706.47321428571422"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="Q07-Vn-m5w">
