@@ -65,9 +65,12 @@ extension TodoViewController : UITableViewDelegate {
 }
 
 extension TodoViewController : AddItemDelegate {
-    func didUserAddTodoItem(textTodo: String) {
-        _ = todoList.newTodo(text: textTodo)
+    func didUserAddTodoItem(_ vc: AddTodoItemViewController, newItem: CheckListItem) {
+        _ = todoList.todos.append(newItem)
         todotableView.reloadData()
+    }
+    
+    func didUserCancelAddingNewItem(_ vc: AddTodoItemViewController) {
     }
     
     func configureCheckMark(for cell: UITableViewCell, with item: CheckListItem) {

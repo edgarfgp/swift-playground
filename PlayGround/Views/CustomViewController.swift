@@ -17,9 +17,9 @@ class CustomViewController: UIViewController {
     var isExpanded : Bool = false
     
     fileprivate lazy var expandedView : ExpandableView = {
-        let expandableView = ExpandableView.instantiateFromNib();
-        expandableView?.translatesAutoresizingMaskIntoConstraints = false
-        return expandableView!
+        let expandableView = ExpandableView();
+        expandableView.translatesAutoresizingMaskIntoConstraints = false
+        return expandableView
     }()
     
     override func viewDidLoad() {
@@ -30,7 +30,6 @@ class CustomViewController: UIViewController {
         containerView.addSubview(expandedView)
         expandedView.applyCustomStyle()
         setUpConstraintsForExpandableView()
-        expandedView.applyCustomStyle()
     }
     
     @objc func didCustomViewEAxpand(sender : UITapGestureRecognizer) {
@@ -45,13 +44,11 @@ class CustomViewController: UIViewController {
         } else {
             isExpanded  = false
             UIView.animate(withDuration: 0.8, animations: {
-                self.expandedView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+                self.expandedView.heightAnchor.constraint(equalToConstant: 70).isActive = true
                 self.expandedView.arrowImage.transform = CGAffineTransform.identity
                 self.containerView.layoutIfNeeded()
             })
         }
-        
-        containerView.layoutIfNeeded()
     }
     
    fileprivate func setUpConstraintsForExpandableView() {
