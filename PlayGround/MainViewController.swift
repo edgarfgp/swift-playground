@@ -2,31 +2,33 @@ import UIKit
 import LBTATools
 
 class MainViewController: UIViewController {
-        
-    @IBOutlet weak var basicControls: UIView!
+      
+    var dashBoardList = ["Basic Controls", "Custom Views", "Table View"]
     
-    @IBOutlet weak var customControls: UIView!
+    @IBOutlet weak var dashBoardCollectionView: UICollectionView!
     
-    @IBOutlet weak var containerView: UIView!
-    
-    @IBOutlet weak var tableViewButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         navigationItem.title = "Dashboard"
-
-        let basicGesture = UITapGestureRecognizer(target: self, action:  #selector(self.navigateToBasic))
-        let customGesture = UITapGestureRecognizer(target: self, action: #selector(self.navigateToCustom))
-               
-        basicControls.addGestureRecognizer(basicGesture)
-        customControls.addGestureRecognizer(customGesture)
         
-        tableViewButton.applyCustomStyle()
-                
-        basicControls.applyCustomStyle()
-        customControls.applyCustomStyle()
+        let widht = (view.frame.width - 20) / 3
+        let layout = dashBoardCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: widht, height: widht)
+        
+//
+//        let basicGesture = UITapGestureRecognizer(target: self, action:  #selector(self.navigateToBasic))
+//        let customGesture = UITapGestureRecognizer(target: self, action: #selector(self.navigateToCustom))
+               
+//        basicControls.addGestureRecognizer(basicGesture)
+//        customControls.addGestureRecognizer(customGesture)
+//
+//        tableViewButton.applyCustomStyle()
+//
+//        basicControls.applyCustomStyle()
+//        customControls.applyCustomStyle()
                 
     }
     
@@ -44,4 +46,24 @@ class MainViewController: UIViewController {
         let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: CustomViewController.self)) as! CustomViewController
         navigationController?.pushViewController(newViewController, animated: true)
         }
+}
+
+extension MainViewController : UICollectionViewDelegate {
+    
+}
+
+extension MainViewController : UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dashBoardList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = dashBoardCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
+        
+        if let label = cell.viewWithTag(100) as? UILabel {
+            label.text = dashBoardList[indexPath.row]
+        }
+        
+        return cell
+    }
 }
