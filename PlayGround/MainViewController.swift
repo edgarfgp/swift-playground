@@ -3,7 +3,7 @@ import LBTATools
 
 class MainViewController: UIViewController {
       
-    var dashBoardList = ["Basic Controls", "Custom Views", "Table View"]
+    var dashBoardList = ["BasicsView", "CustomView", "TableView"]
     
     @IBOutlet weak var dashBoardCollectionView: UICollectionView!
     
@@ -17,38 +17,28 @@ class MainViewController: UIViewController {
         let widht = (view.frame.width - 20) / 3
         let layout = dashBoardCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: widht, height: widht)
-        
-//
-//        let basicGesture = UITapGestureRecognizer(target: self, action:  #selector(self.navigateToBasic))
-//        let customGesture = UITapGestureRecognizer(target: self, action: #selector(self.navigateToCustom))
-               
-//        basicControls.addGestureRecognizer(basicGesture)
-//        customControls.addGestureRecognizer(customGesture)
-//
-//        tableViewButton.applyCustomStyle()
-//
-//        basicControls.applyCustomStyle()
-//        customControls.applyCustomStyle()
-                
     }
-    
-    @IBAction func tableViewTapped(_ sender: Any) {
-         let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: TodoViewController.self)) as! TodoViewController
-                   navigationController?.pushViewController(newViewController, animated: true)
-    }
-    
-    @objc func navigateToBasic(sender : UITapGestureRecognizer) {
-        let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: BasicsViewController.self)) as! BasicsViewController
-        navigationController?.pushViewController(newViewController, animated: true)
-    }
-    
-    @objc func navigateToCustom(sender : UITapGestureRecognizer) {
-        let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: CustomViewController.self)) as! CustomViewController
-        navigationController?.pushViewController(newViewController, animated: true)
-        }
 }
 
 extension MainViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let viewController = dashBoardList[indexPath.row]
+        
+        if viewController  == "BasicsView" {
+            let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: BasicsViewController.self)) as! BasicsViewController
+                   navigationController?.pushViewController(newViewController, animated: true)
+        }else if viewController  == "CustomView" {
+            let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: CustomViewController.self)) as! CustomViewController
+            navigationController?.pushViewController(newViewController, animated: true)
+        }else {
+            
+            let newViewController = storyboard?.instantiateViewController(withIdentifier: String(describing: TodoViewController.self)) as! TodoViewController
+            navigationController?.pushViewController(newViewController, animated: true)
+        }
+        
+        
+    }
     
 }
 
